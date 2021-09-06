@@ -1,17 +1,28 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'event-thumbnail',
-    templateUrl: './event-thumbnail.component.html'
+    templateUrl: './event-thumbnail.component.html',
+    styles: [ `
+                .pad-left { margin-left:8px; }
+                .well div { color: #bbb; }
+            `]
 })
 
 export class EventThumbnailComponent{
     @Input() event:any;
-    @Output() eventClick = new EventEmitter();
 
-    handleClickMe(){
-        //console.log('clicked!');
-        this.eventClick.emit(this.event.name);
+    someProperty: any = "some valie";
+
+    logFoo(){
+        console.log('foo');
     }
+
+
+    /* Output() eventClick = new EventEmitter(); 
+
+        handleClickMe(){
+        this.eventClick.emit(this.event.name);
+    } */
 
 }
