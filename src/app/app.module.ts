@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { EventAppComponent } from './events-app.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
@@ -14,7 +15,8 @@ import { NavBarComponent } from './nav/navbar.component';
     NavBarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [EventAppComponent]
