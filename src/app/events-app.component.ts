@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
             <router-outlet></router-outlet>
           `
 })
-export class EventAppComponent {
+export class EventsAppComponent {
   title = 'ng-fund';
 }

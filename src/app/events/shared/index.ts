@@ -1,1 +1,3 @@
-//export * from '../app/events/create-event.component';
+export * from './event.service'
+//export * from './event.model'
+//export * from './restricted-words.validator'
