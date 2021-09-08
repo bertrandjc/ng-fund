@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
             <!-- <h2>My Hello world! <img src="/assets/images/basic-shield.png" style="width:40px;"></h2> -->
             <nav-bar></nav-bar>
-            <events-list></events-list>
+            <router-outlet></router-outlet>
           `
 })
 export class EventAppComponent {
