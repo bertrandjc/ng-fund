@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { MyEvent } from "./interface/IMyEvent";
+import { IEvent } from "./shared/event.model";
 
 @Component({
     selector: 'event-thumbnail',
@@ -28,7 +28,7 @@ import { MyEvent } from "./interface/IMyEvent";
 })
 
 export class EventThumbnailComponent{
-    @Input() event: any = []
+    @Input() event!: IEvent;  
 
     logFoo(){
         console.log('foo');
