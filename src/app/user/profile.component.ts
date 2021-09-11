@@ -16,16 +16,16 @@ import { AuthService } from './auth.service'
 })
 export class ProfileComponent implements OnInit {
   profileForm!: FormGroup
-  private firstName!: FormControl; 
-  private lastName!: FormControl;
+  private firstName: FormControl = new FormControl(); 
+  private lastName: FormControl = new FormControl();
 
   constructor(private router: Router, private authService: AuthService){
 
   }
 
   ngOnInit(): void {
-    this.firstName = new FormControl(this.authService.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*') ])
-    this.lastName = new FormControl(this.authService.currentUser.lastName, [Validators.required, Validators.pattern('[a-zA-Z].*') ])
+    this.firstName = new FormControl(this.authService.currentUser?.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*') ])
+    this.lastName = new FormControl(this.authService.currentUser?.lastName, [Validators.required, Validators.pattern('[a-zA-Z].*') ])
 
     this.profileForm = new FormGroup({
       firstName: this.firstName,
