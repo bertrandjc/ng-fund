@@ -24,9 +24,6 @@ import { IEvent } from "./shared/event.model";
 })
 
 export class EventsListComponent implements OnInit{
-  /*  handleEventClicked(data: any){
-      console.log('received:', data);
-  } */
   events: IEvent[] = [];
 
   constructor(private eventService: EventService, 
