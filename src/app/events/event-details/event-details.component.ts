@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs';
 import { IEvent, ISession } from '../shared/event.model';
 import { EventService } from '../shared/event.service';
 
@@ -13,7 +14,7 @@ import { EventService } from '../shared/event.service';
         `]
 })
 export class EventDetailsComponent implements OnInit {
-  event!: IEvent;
+  event: IEvent;
   addMode: boolean = false;
   filterBy: string = 'all';
   sortBy: string = 'votes';
@@ -22,12 +23,11 @@ export class EventDetailsComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-        this.event = this.eventService.getEvent(+params['id']);
-        this.addMode = false;
-    })
-    
+  ngOnInit() {
+    this.route.data.forEach((data) => {
+          this.event =  data['event'];
+          this.addMode = false;
+        })
     // this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
   }
 
