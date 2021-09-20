@@ -1,10 +1,21 @@
-import { DebugElement } from "@angular/core"
+import { Component, DebugElement, Input, NO_ERRORS_SCHEMA } from "@angular/core"
 import { ComponentFixture, TestBed } from "@angular/core/testing"
 import { AuthService } from "src/app/user/auth.service"
 import { VoterService } from "./voter.service"
 import { DurationPipe } from "../shared/duration.pipe"
 import { SessionListComponent } from "./session-list.component"
 import { By } from "@angular/platform-browser"
+//import { CollapsibleWellComponent } from "src/app/common"
+//import { UpvoteComponent } from "."
+
+//OPtion 1 (Shallow integration test -- but option 2: Schema is easier!)
+// @Component({
+//     selector: 'upvote'
+// })
+// class MockUpvoteComponent{
+//     @Input()
+//     @Input()
+// }
 
 
 describe('SessionListComponent', ()=> {
@@ -23,11 +34,16 @@ describe('SessionListComponent', ()=> {
         TestBed.configureTestingModule({
             declarations: [
                 SessionListComponent,
-                DurationPipe
+                DurationPipe,
+                //CollapsibleWellComponent, (sorry :  shallow testing!)
+                //UpvoteComponent (sorry :  shallow testing!)
             ],
             providers: [
                 { provide: AuthService, useValue: mockAuthService},
                 { provide: VoterService, useValue: mockVoterService}
+            ],
+            schemas: [
+                NO_ERRORS_SCHEMA 
             ]
         });
 
